@@ -1,0 +1,31 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<div class="row my-4">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <table class="table table-bordered table-striped ">
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Phone No</th>
+                <th></th>
+            </tr>
+            {% for data in admin %}
+            <tr>
+                <td>{{data.username}}</td>
+                <td>{{data.password}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.role.role_name}}</td>
+                <td>{{data.phone}}</td>
+                <td><a class="btn btn-danger " href="">Delete</a></td>
+            </tr>
+            {% endfor %}
+    
+        </table>
+    </div>
+    <div class="col-lg-2"></div>
+    
+</div>
+{% endblock %}

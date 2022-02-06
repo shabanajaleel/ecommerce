@@ -1,0 +1,150 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid bg-light">
+    <div class="row ">
+    <div class="col-sm-2 col-md-2 col-lg-3 ">
+
+    </div>
+    <div class="col-sm-8 col-sm-8 col-lg-6">
+        <div class="row signup p-2 bg-white"> 
+            <h4>Signup</h4>
+        <div class="row mb-3 mt-3">
+            <div class="col-sm-12">
+            <label for="" class="form-label"> Usertype</label>
+            <select name="usertypes" id="usertype" class="form-select" onchange="resellershow()">
+                <option value="customer">customer</option>
+                <option value="reseller">reseller</option>
+            </select>
+        </div>
+        </div>
+
+        <div class="row" style="display:none" id="reseller">
+        <div class="row mb-3" >
+            <div class="col-sm-6">
+                <label for="" class="form-label">Company Name</label>
+                <input type="text" name="compname" id="companyname" class="form-control"> 
+            </div>
+            <div class="col-sm-6">
+                <label for="" class="form-label"> Company Id</label>
+                <input type="text" name="compid" id="companyid"  class="form-control"> 
+            </div>
+            </div>
+        </div>
+
+
+        <div class="row" id="custom">
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <label for="" class="form-label"> Firstname</label>
+                <input type="text" name="fname" id="firstname"  class="form-control"> 
+            </div>
+            <div class="col-sm-6">
+                <label for="" class="form-label"> Lastname(optional)</label>
+                <input type="text" name="lname" id="lastname"  class="form-control"> 
+            </div>
+            
+            
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">gender</label>
+                <input type="radio" name="gender1" id="gender">female
+                <input type="radio" name="gender1" id="gender">male
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">Date of birth</label>
+                <input type="date" name="dob1" id="dob" class="form-control">
+            </div>
+
+        </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">Address</label>
+                <textarea name="address1" id="address" cols="30" rows="5" class="form-control"></textarea>
+            </div>
+
+        </div>
+        <div class="row mb-3">
+        <div class="col-sm-12">
+            <label for="" class="form-label"> country</label>
+            <select name="country1" id="country" class="form-control">
+                <option selected>select your country</option>
+                <option value="india">india</option>
+                <option value="pakistan">pakistan</option>
+                <option value="bangladesh">bangladesh</option>
+            </select>
+        </div>
+    </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">mobile</label>
+                <input type="number" name="mobile1" id="mobile" class="form-control" >
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">email</label>
+                <input type="email" name="email1" id="email" class="form-control" >
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">Password</label>
+                <input type="password" name="password" id="pass" class="form-control" >
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">Confirm Password</label>
+                <input type="password" name="confpassword" id="confpass" class="form-control" >
+            </div>
+
+        </div>
+        <!-- Bank Account Details -->
+        <div class="row " style="display:none" id="bankdetails">  
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <label for="">Bank Account Holder</label>
+                <input type="password" name="accountholder" id="accntholdr" class="form-control" >
+            </div>
+
+            <div class="col-sm-12">
+                <label for="">Bank Account Number</label>
+                <input type="password" name="accountnumber" id="accntno" class="form-control">
+            </div>
+
+            <div class="col-sm-12">
+                <label for="">Bank Account IFSC</label>
+                <input type="password" name="ifsc" id="ifsccode" class="form-control" >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end of bank account details -->
+        <div class="row mb-3">
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success " onclick="validatesignup()"> Sign Up</button>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-3"></div>
+
+</div>
+</div>
+{% endblock %}
